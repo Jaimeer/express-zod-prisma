@@ -1,0 +1,9 @@
+{
+  "name": "clients",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "clientApi.ts",
+    "clientMdm.ts"
+  ]
+}

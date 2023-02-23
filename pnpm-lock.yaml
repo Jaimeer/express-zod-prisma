@@ -23,6 +23,7 @@ importers:
   apps/api:
     specifiers:
       '@types/node': ^18.14.0
+      clients: workspace:*
       eslint: 8.34.0
       eslint-config-custom: workspace:*
       express-zod-api: ^8.9.3
@@ -30,6 +31,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.3
     dependencies:
+      clients: link:../../packages/clients
       express-zod-api: 8.9.3_typescript@4.9.5
       server: link:../../packages/server
     devDependencies:
@@ -39,9 +41,10 @@ importers:
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.5
 
-  apps/mdm:
+  apps/api2:
     specifiers:
       '@types/node': ^18.14.0
+      clients: workspace:*
       eslint: 8.34.0
       eslint-config-custom: workspace:*
       express-zod-api: ^8.9.3
@@ -49,6 +52,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.3
     dependencies:
+      clients: link:../../packages/clients
       express-zod-api: 8.9.3_typescript@4.9.5
       server: link:../../packages/server
     devDependencies:
@@ -57,6 +61,9 @@ importers:
       eslint-config-custom: link:../../packages/eslint-config-custom
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.5
+
+  packages/clients:
+    specifiers: {}
 
   packages/eslint-config-custom:
     specifiers:

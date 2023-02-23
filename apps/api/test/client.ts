@@ -1,4 +1,4 @@
-import { ExpressZodAPIClient } from '../src/frontend/client'
+import { ExpressZodAPIClient } from 'clients/clientApi'
 import './expects'
 
 const domain = 'http://localhost:5000'

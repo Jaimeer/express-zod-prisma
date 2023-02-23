@@ -13,6 +13,10 @@ const config: ServerConfig = {
   },
 }
 
-fs.writeFileSync(path.join(__dirname, './frontend/client.ts'), new Client(routing).print(), 'utf-8')
+fs.writeFileSync(
+  path.join(__dirname, '../../../packages/clients/clientApi.ts'),
+  new Client(routing).print(),
+  'utf-8'
+)
 
 export const app = new ServerFactory('Api', config, routing)

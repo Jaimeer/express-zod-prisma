@@ -10,6 +10,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "dependencies": {
+    "clients": "workspace:*",
     "express-zod-api": "^8.9.3",
     "server": "workspace:*"
   },

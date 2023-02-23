@@ -10,6 +10,10 @@ const config: ServerConfig = {
   tags: {},
 }
 
-fs.writeFileSync(path.join(__dirname, './frontend/client.ts'), new Client(routing).print(), 'utf-8')
+fs.writeFileSync(
+  path.join(__dirname, '../../../packages/clients/clientMdm.ts'),
+  new Client(routing).print(),
+  'utf-8'
+)
 
 export const app = new ServerFactory('Api2', config, routing)

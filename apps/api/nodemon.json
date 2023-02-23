@@ -5,7 +5,7 @@
   ],
   "ext": "ts, tsx, js, json, yml",
   "ignore": [
-    "src/frontend"
+    "../../packages/clients"
   ],
   "execMap": {
     "ts": "node -r esbuild-register"
