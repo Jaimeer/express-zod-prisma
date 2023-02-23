@@ -1,5 +1,6 @@
 import { defaultEndpointsFactory, z, type Routing } from 'express-zod-api'
 import { authMiddleware } from '../auth/auth.middleware'
+import { authEndpointsFactory } from '../auth/auth.factory'
 import { zStatus } from '../status/status.router'
 import { UserService } from './user.service'
 
@@ -8,7 +9,7 @@ const zUser = z.object({
   name: z.string(),
 })
 
-const usersEndpoint = defaultEndpointsFactory.addMiddleware(authMiddleware).build({
+const usersEndpoint = authEndpointsFactory.build({
   method: 'get',
   tag: 'users',
   input: z.object({}),
@@ -22,7 +23,7 @@ const usersEndpoint = defaultEndpointsFactory.addMiddleware(authMiddleware).buil
   },
 })
 
-const userEndpoint = defaultEndpointsFactory.addMiddleware(authMiddleware).build({
+const userEndpoint = authEndpointsFactory.build({
   method: 'get',
   tag: 'users',
   input: z.object({
@@ -35,7 +36,7 @@ const userEndpoint = defaultEndpointsFactory.addMiddleware(authMiddleware).build
   },
 })
 
-const userCreateEndpoint = defaultEndpointsFactory.addMiddleware(authMiddleware).build({
+const userCreateEndpoint = authEndpointsFactory.build({
   method: 'post',
   tag: 'users',
   input: z.object({
@@ -48,7 +49,7 @@ const userCreateEndpoint = defaultEndpointsFactory.addMiddleware(authMiddleware)
   },
 })
 
-const userUpdateEndpoint = defaultEndpointsFactory.addMiddleware(authMiddleware).build({
+const userUpdateEndpoint = authEndpointsFactory.build({
   method: 'patch',
   tag: 'users',
   input: z.object({
@@ -62,7 +63,7 @@ const userUpdateEndpoint = defaultEndpointsFactory.addMiddleware(authMiddleware)
   },
 })
 
-const userRemoveEndpoint = defaultEndpointsFactory.addMiddleware(authMiddleware).build({
+const userRemoveEndpoint = authEndpointsFactory.build({
   method: 'delete',
   tag: 'users',
   input: z.object({
