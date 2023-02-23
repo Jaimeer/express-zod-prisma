@@ -1,0 +1,25 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "nodemon --config nodemon.json",
+    "build": "",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "dependencies": {
+    "express-zod-api": "^8.9.3",
+    "server": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.0",
+    "eslint": "8.34.0",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.5.3"
+  }
+}

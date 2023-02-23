@@ -1,0 +1,13 @@
+{
+  "watch": [
+    "../../packages",
+    "."
+  ],
+  "ext": "ts, tsx, js, json, yml",
+  "ignore": [
+    "src/frontend"
+  ],
+  "execMap": {
+    "ts": "node -r esbuild-register"
+  }
+}
