@@ -1,4 +1,5 @@
 import { PaginateResponse } from '../../dto/response.dto'
+import { Status } from '../status/status.service'
 
 export type User = {
   id: string
@@ -11,6 +12,15 @@ class UserServiceClass {
   }
   async get(user: User): Promise<User> {
     return user
+  }
+  async create(data: Omit<User, 'id'>): Promise<User> {
+    return { ...data, id: 'new' }
+  }
+  async update(user: User, data: Partial<Omit<User, 'id'>>): Promise<User> {
+    return { ...user, ...data, id: 'update' }
+  }
+  async remove(_: User): Promise<Status> {
+    return { status: 'deleted' }
   }
 }
 export const UserService = new UserServiceClass()

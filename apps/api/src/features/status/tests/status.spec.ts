@@ -1,13 +1,13 @@
-import { test, expect, describe } from 'vitest'
+import { it, expect, describe } from 'vitest'
 import { client } from '../../../../test/client'
 import { type Status } from '../status.service'
 
 describe('Status', async () => {
-  test('Get should respond successfully', async () => {
-    const responseMock = await client.provide('get', '/v1', {})
+  it('Get', async () => {
+    const response = await client.provide('get', '/v1', {})
 
-    expect(responseMock).toBeSuccess({
+    expect(response).toBeSuccess<Status>({
       status: 'ok',
-    } satisfies Status)
+    })
   })
 })
